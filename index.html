@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Primary SEO -->
+    <meta name="title" content="Portal Manajemen Instrumen Asesmen Sumatif MAN 3 Sumbawa">
+    <meta name="description" content="Portal resmi untuk pengelolaan instrumen asesmen sumatif MAN 3 Sumbawa. Kirim soal, cek status pengumpulan, dan pantau update daftar soal secara real-time.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sas.man3sumbawa.sch.id/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portal Manajemen Instrumen Asesmen Sumatif MAN 3 Sumbawa">
+    <meta property="og:description" content="Portal resmi untuk pengelolaan instrumen asesmen sumatif MAN 3 Sumbawa. Kirim soal, cek status pengumpulan, dan pantau update daftar soal secara real-time.">
+    <meta property="og:url" content="https://sas.man3sumbawa.sch.id/">
+    <meta property="og:image" content="https://sas.man3sumbawa.sch.id/images/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portal Manajemen Instrumen Asesmen Sumatif MAN 3 Sumbawa">
+    <meta name="twitter:description" content="Portal resmi untuk pengelolaan instrumen asesmen sumatif MAN 3 Sumbawa. Kirim soal, cek status pengumpulan, dan pantau update daftar soal secara real-time.">
+    <meta name="twitter:image" content="https://sas.man3sumbawa.sch.id/images/og-image.png">
+    
+    <!-- Responsive -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Site title-->
+    <title>Asesmen Sumatif | MAN 3 Sumbawa</title>
+
+    <!-- Google icons -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- External files -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div><img src="images/logo.png" alt="Logo MAN 3 Sumbawa"></div>
+        <div>Portal Manajemen Instrumen Asesmen Sumatif</div>
+    </header>
+
+    <main>
+        <section class="headline-info">
+            <h1>Madrasah Aliyah Negeri 3 Sumbawa</h1>
+            <h2>Asesmen Sumatif Akhir Semester Gasal</h2>
+            <h2>Tahun Pelajaran 2025/2026</h2>
+        </section>
+
+        <section class="btn-link-box">
+            <a class="btn-link" href="https://docs.google.com/forms/d/e/1FAIpQLScPqgpmsvkDgTZHcSpVLFiu2yG7VMGHheclxrZGYDNSh4DeUw/viewform?usp=dialog" target="_blank">
+                <span class="material-symbols-outlined">send_and_archive</span>
+                Kirim Soal Google Form
+            </a>
+            <a class="btn-link" href="">
+                <span class="material-symbols-outlined">list_alt_check</span>
+                Cek Soal Terkirim
+            </a>
+            <a class="btn-link" href="https://drive.google.com/drive/folders/1bhU7mC_7iahP6wE6xUXp6KD83qsykELa?usp=sharing" target="_blank">
+                <span class="material-symbols-outlined">drive_export</span>
+                Kelola Soal (Panitia)
+            </a>
+        </section>
+
+        <section class="live-preview">
+            <h2>Live Update Daftar Soal Terkirim</h2>
+            <span class="material-symbols-outlined arrow">
+                arrow_cool_down
+            </span>
+
+            <div class="iframe-container">
+                <iframe
+                id="liveSheet"
+                src="https://docs.google.com/spreadsheets/d/1w_OHg7ZDiei3HN3D3o_x-sHaXydG3qg7i9u7ZIsemIQ/preview"
+                allowfullscreen
+                loading="lazy"
+                title="Live Preview Spreadsheet Daftar Soal">
+                </iframe>
+            </div>
+
+            <div class="reloadBtn-box">
+                <button id="reloadBtn"><span class="material-symbols-outlined">
+                    refresh</span>
+                    Reload Sheet
+                </button>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MAN 3 Sumbawa | Made with <span class="material-symbols-outlined">favorite</span> by <a href="https://github.com/cmesyarif" target="_blank">Syarifuddin</a></p> 
+    </footer>
+
+    <script>
+
+        // Reload iframe manual
+        document.getElementById("reloadBtn").addEventListener("click", () => {
+            const iframe = document.getElementById("liveSheet");
+
+            // fade-out
+            iframe.style.opacity = "0";
+
+            setTimeout(() => {
+            iframe.src = iframe.src; // reload iframe
+
+            // fade-in setelah iframe selesai load
+            iframe.onload = () => {
+                iframe.style.opacity = "1";
+            };
+            }, 100);
+        });
+
+        // // Auto-reload iframe 
+        // setInterval(() => {
+        //     const f = document.getElementById("liveSheet");
+        //     f.src = f.src; // reload iframe
+        // }, 5000); // refresh tiap 5 detik
+    </script>
+</body>
+</html>
