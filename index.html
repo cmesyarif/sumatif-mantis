@@ -6,20 +6,20 @@
     <meta name="description" content="Portal resmi untuk pengelolaan instrumen asesmen sumatif MAN 3 Sumbawa. Kirim soal, cek status pengumpulan, dan pantau update daftar soal secara real-time.">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://sas.man3sumbawa.sch.id/">
+    <link rel="canonical" href="https://sumatif.man3sumbawa.sch.id/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Portal Manajemen Instrumen Asesmen Sumatif MAN 3 Sumbawa">
     <meta property="og:description" content="Portal resmi untuk pengelolaan instrumen asesmen sumatif MAN 3 Sumbawa. Kirim soal, cek status pengumpulan, dan pantau update daftar soal secara real-time.">
-    <meta property="og:url" content="https://sas.man3sumbawa.sch.id/">
-    <meta property="og:image" content="https://sas.man3sumbawa.sch.id/images/og-image.png">
+    <meta property="og:url" content="https://sumatif.man3sumbawa.sch.id/">
+    <meta property="og:image" content="https://sumatif.man3sumbawa.sch.id/images/og-image.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Portal Manajemen Instrumen Asesmen Sumatif MAN 3 Sumbawa">
     <meta name="twitter:description" content="Portal resmi untuk pengelolaan instrumen asesmen sumatif MAN 3 Sumbawa. Kirim soal, cek status pengumpulan, dan pantau update daftar soal secara real-time.">
-    <meta name="twitter:image" content="https://sas.man3sumbawa.sch.id/images/og-image.png">
+    <meta name="twitter:image" content="https://sumatif.man3sumbawa.sch.id/images/og-image.png">
     
     <!-- Responsive -->
     <meta charset="UTF-8">
@@ -72,6 +72,7 @@
                 arrow_cool_down
             </span>
 
+            <!-- Just edit the file's ID in case you want to replace with another spreadsheet -->
             <div class="iframe-container">
                 <iframe
                 id="liveSheet"
@@ -96,30 +97,6 @@
         <p>&copy; 2025 MAN 3 Sumbawa | Made with <span class="material-symbols-outlined">favorite</span> by <a href="https://github.com/cmesyarif" target="_blank">Syarifuddin</a></p> 
     </footer>
 
-    <script>
-
-        // Reload iframe manual
-        document.getElementById("reloadBtn").addEventListener("click", () => {
-            const iframe = document.getElementById("liveSheet");
-
-            // fade-out
-            iframe.style.opacity = "0";
-
-            setTimeout(() => {
-            iframe.src = iframe.src; // reload iframe
-
-            // fade-in setelah iframe selesai load
-            iframe.onload = () => {
-                iframe.style.opacity = "1";
-            };
-            }, 100);
-        });
-
-        // // Auto-reload iframe 
-        // setInterval(() => {
-        //     const f = document.getElementById("liveSheet");
-        //     f.src = f.src; // reload iframe
-        // }, 5000); // refresh tiap 5 detik
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
