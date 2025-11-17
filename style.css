@@ -25,6 +25,21 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* tinggi minimal = tinggi layar */
+}
+
+main {
+  flex: 1; /* dorong footer ke bawah jika konten sedikit */
+}
+
 body {
     font-family: "Roboto", sans-serif;
     /* font-optical-sizing: auto; */
@@ -45,7 +60,6 @@ header {
   justify-content: center;
   gap: 25px;
   box-shadow: var(--shadow);
-  margin: 0 auto;
   padding: 0.8rem;
 }
 
