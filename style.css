@@ -89,6 +89,16 @@ header div:nth-child(2) {
 .headline-info h2 {
   color: var(--color-subtitle);
   font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+span.text-em {
+  background-image: linear-gradient(120deg, #fff176 0%, #ffd54f 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 80%;
+  background-position: 0 85%;
+  padding: 0.1rem 0.15rem;
+  border-radius: 5px;
 }
 
 /* Button Link Section */
