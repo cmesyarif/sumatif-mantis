@@ -68,9 +68,16 @@
 
         <section class="live-preview">
             <h2>Live Update Daftar Soal Terkirim</h2>
-            <span class="material-symbols-outlined arrow">
-                arrow_cool_down
-            </span>
+
+            <div class="arrow-reload-flex-box">
+                <span class="material-symbols-outlined arrow">
+                    arrow_cool_down
+                </span>
+                <button class="reloadBtn reloadBtn-up"><span class="material-symbols-outlined">
+                    refresh</span>
+                    Reload Sheet
+                </button>
+            </div>
 
             <!-- Just edit the file's ID in case you want to replace with another spreadsheet -->
             <div class="iframe-container">
@@ -79,12 +86,13 @@
                 src="https://docs.google.com/spreadsheets/d/1bt46mRuYopBfDdAsXFikSJJXPNys1RyshNBok2gZCj0/preview"
                 allowfullscreen
                 loading="lazy"
-                title="Live Preview Spreadsheet Daftar Soal">
+                title="Live Preview Spreadsheet Daftar Soal"
+                style="opacity:1;">
                 </iframe>
             </div>
 
-            <div class="reloadBtn-box">
-                <button id="reloadBtn"><span class="material-symbols-outlined">
+            <div class="reloadBtn-box-down">
+                <button class="reloadBtn"><span class="material-symbols-outlined">
                     refresh</span>
                     Reload Sheet
                 </button>

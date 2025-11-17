@@ -145,7 +145,7 @@ header div:nth-child(2) {
 
 /* Live preview */
 .live-preview {
-  margin: 4rem auto 0rem auto;
+  margin: 4rem auto 0 auto;
   padding: 0 5%;
   /* border: 1px solid red; */
 }
@@ -175,7 +175,7 @@ span.arrow {
     display: block;
     margin-bottom: 0.8rem;
     animation: turun 1s infinite ease-in-out;
-  }
+}
 
   @keyframes turun {
     0%   { transform: translateY(-6px); opacity: 0; }
@@ -196,7 +196,24 @@ span.arrow {
 }
 
 /* Reload-btn iframe */
-.reloadBtn-box  {
+.arrow-reload-flex-box {
+  display: flex;
+  justify-content: center; /* arrow berada di tengah */
+  align-items: center;
+  position: relative; /* untuk memposisikan reloadBtn-up*/
+  width: 100%;
+  margin-bottom: 5px;
+  /* border: 1px solid red; */
+}
+
+/* Tombol berada di kanan */
+.reloadBtn-up  {
+  position: absolute;
+  right: 0;
+  /* border: 1px solid red; */
+}
+
+.reloadBtn-box-down  {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -204,7 +221,7 @@ span.arrow {
   /* border: 1px solid red; */
 }
 
-#reloadBtn {
+.reloadBtn {
   font-family: "Roboto", sans-serif;
   padding: 12px 18px;
   border-radius: 25px;
@@ -217,7 +234,7 @@ span.arrow {
   cursor: pointer;
 }
 
-#reloadBtn:hover {
+.reloadBtn:hover {
   background-color: var(--color-hover);
   transform: translateY(-2px);
 }
@@ -231,7 +248,8 @@ span.arrow {
 }
 
 #liveSheet {
-    transition: opacity 0.4s ease;
+  transition: opacity 250ms ease;
+  will-change: opacity;
 }
 
 /* Footer */
@@ -297,7 +315,7 @@ footer span.material-symbols-outlined {
   }
 
   .btn-link {
-    width: 80%;
+    width: 60%;
     justify-content: center;
   }
 
@@ -316,15 +334,24 @@ footer span.material-symbols-outlined {
 
   .iframe-container {
     height: 450px;
-    margin: 15px auto;
+    margin: 5px auto 15px auto;
     border: 5px solid var(--color-border);
     border-radius: 0;
 
   }
 
-  #reloadBtn {
+  .material-symbols-outlined {
+  font-size: 18px;
+  }
+
+  .reloadBtn-up  {
+    margin-right: 10px;
+  }
+
+  .btn-link,
+  .reloadBtn {
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     /* width: 40%; */
   }
 

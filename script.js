@@ -1,19 +1,53 @@
 // Reload iframe manual
-document.getElementById("reloadBtn").addEventListener("click", () => {
-    const iframe = document.getElementById("liveSheet");
+const buttons = document.querySelectorAll('.reloadBtn');
+const iframe = document.getElementById('liveSheet');
 
-    // fade-out
-    iframe.style.opacity = "0";
+if (!iframe) {
+  console.warn('iframe #liveSheet tidak ditemukan');
+} else {
+  // pastikan ada transition (opsional, tapi berguna)
+  if (!iframe.style.transition) {
+    iframe.style.transition = 'opacity 250ms ease';
+  }
 
-    setTimeout(() => {
-    iframe.src = iframe.src; // reload iframe
+  // handler untuk setiap tombol
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // mulai fade-out
+      iframe.style.opacity = '0';
 
-    // fade-in setelah iframe selesai load
-    iframe.onload = () => {
-        iframe.style.opacity = "1";
-    };
-    }, 100);
-});
+      // siapkan handler load yg hanya dijalankan sekali
+      const onLoad = () => {
+        iframe.style.opacity = '1';
+        iframe.removeEventListener('load', onLoad);
+      };
+      iframe.addEventListener('load', onLoad);
+
+      // reload iframe — tambahkan cache-buster supaya pasti reload
+      const src = iframe.getAttribute('src') || '';
+      const cacheBuster = `_cb=${Date.now()}`;
+      const newSrc = src.includes('?') ? `${src}&${cacheBuster}` : `${src}?${cacheBuster}`;
+      iframe.setAttribute('src', newSrc);
+    });
+  });
+}
+
+// Ketika tombolnya hanya satu (pake id="reloadBtn")
+// document.getElementById("reloadBtn").addEventListener("click", () => {
+//     const iframe = document.getElementById("liveSheet");
+
+//     // fade-out
+//     iframe.style.opacity = "0";
+
+//     setTimeout(() => {
+//     iframe.src = iframe.src; // reload iframe
+
+//     // fade-in setelah iframe selesai load
+//     iframe.onload = () => {
+//         iframe.style.opacity = "1";
+//     };
+//     }, 100);
+// });
 
 // // Auto-reload iframe 
 // setInterval(() => {
