@@ -1,0 +1,6 @@
+deployment:
+  tasks:
+    - echo "Starting deployment..."
+    - export DEPLOYPATH=/home/mansumba/sumatif
+    - /bin/rsync -av --delete --exclude='.git' --exclude='.cpanel.yml' . $DEPLOYPATH
+    - echo "Deployment completed."
