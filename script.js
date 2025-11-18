@@ -1,3 +1,13 @@
+// Edit running text here
+const announcements = [
+    "📢 SAS akan dilaksanakan pada tanggal 1 s/d 8 Des 2025",
+    "📌 Batas akhir kirim soal tanggal 29 Nov 2025",
+];
+
+const runBox = document.querySelector(".running-items");
+runBox.innerHTML = announcements.map(a => `<span>${a}</span>`).join("");
+
+
 // Reload iframe manual
 const buttons = document.querySelectorAll('.reloadBtn');
 const iframe = document.getElementById('liveSheet');
