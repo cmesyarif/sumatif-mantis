@@ -1,7 +1,8 @@
 // Edit running text here
 const announcements = [
-    "📢 SAS akan dilaksanakan pada tanggal 1 s/d 8 Des 2025",
-    "📌 Batas akhir kirim soal tanggal 29 Nov 2025",
+    "📢 SAS dilaksanakan tanggal 1 s/d 8 Des 2025",
+    "🎯 Batas akhir kirim soal tanggal 29 Nov 2025",
+    "🎓 Pembagian rapor tanggal 20 Des 2025",
 ];
 
 const runBox = document.querySelector(".running-items");

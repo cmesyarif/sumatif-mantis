@@ -93,7 +93,6 @@ header div:nth-child(2) {
   align-items: center;
   width: 100%;
   overflow: hidden;
-  /* box-shadow: var(--box-shadow); */
   padding: 20px 0;
   /* border: 1px solid red; */
   
@@ -119,7 +118,7 @@ header div:nth-child(2) {
   animation: runText 20s linear infinite;
   white-space: nowrap;
   color: var(--color-subtitle);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -142,7 +141,7 @@ header div:nth-child(2) {
 
 /* Headings */
 .headline-info {
-  margin: 0.5rem auto 2rem;
+  margin: 1rem auto 2rem;
   text-align: center;
   /* border: 1px solid red; */
 }
